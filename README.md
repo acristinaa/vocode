@@ -1,37 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vocode 🎤
+
+An AI-powered oral exam trainer that helps you practice for any topic with voice interaction.
+
+## Features
+
+- 🎯 **Any Topic** - Practice JavaScript, React, System Design, or create custom topics
+- 🗣️ **Voice Interaction** - Speak your answers naturally and hear AI responses
+- 🤖 **AI Examiner** - Powered by Claude AI for intelligent, adaptive questioning
+- 📊 **Session History** - Track your practice sessions and progress
+- ⚙️ **Customizable** - Choose difficulty level and session duration
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **AI**: Claude API via [Langdock](https://langdock.com/)
+- **State**: Zustand
+- **Voice**: Web Speech API
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+
+- A Langdock account with API access ([get one here](https://langdock.com/))
+- Chrome or Edge browser (for speech recognition)
+
+### Installation
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/vocode.git
+cd vocode
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up environment variables**
+```bash
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edit `.env.local` and add your Langdock credentials:
+```bash
+LANGDOCK_API_KEY=your_langdock_api_key_here
+LANGDOCK_BASE_URL=https://api.langdock.com/anthropic/eu
+```
 
-## Learn More
+> **Note**: Check your Langdock dashboard for the correct base URL for your region (EU/US).
 
-To learn more about Next.js, take a look at the following resources:
+4. **Run the development server**
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Open your browser**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Deploy on Vercel
+## Project Structure
+```
+vocode/
+├── src/
+│   ├── app/
+│   │   ├── api/chat/route.ts    # Claude API endpoint (via Langdock)
+│   │   ├── exam/page.tsx        # Exam session page
+│   │   ├── layout.tsx           # Root layout
+│   │   ├── page.tsx             # Home page
+│   │   └── globals.css          # Global styles
+│   ├── components/
+│   │   ├── TopicSelector.tsx    # Topic selection UI
+│   │   ├── VoiceAgent.tsx       # Main exam interface
+│   │   └── SessionHistory.tsx   # Past sessions table
+│   ├── hooks/
+│   │   ├── useSpeechRecognition.ts
+│   │   └── useSpeechSynthesis.ts
+│   ├── lib/
+│   │   └── prompts.ts           # AI system prompts
+│   ├── store/
+│   │   └── examStore.ts         # Zustand state
+│   └── types/
+│       └── index.ts             # TypeScript types
+└── ...config files
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# vocode
+1. **Select a Topic** - Choose from predefined topics or create a custom one
+2. **Configure Settings** - Set difficulty and duration
+3. **Start the Exam** - Click "Start Exam Session"
+4. **Speak Your Answers** - Click the microphone and answer out loud
+5. **End Session** - Click "End Session" when done
+
+## Browser Support
+
+| Feature | Chrome | Edge | Firefox | Safari |
+|---------|--------|------|---------|--------|
+| Speech Recognition | ✅ | ✅ | ❌ | ❌ |
+| Speech Synthesis | ✅ | ✅ | ✅ | ✅ |
+

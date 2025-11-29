@@ -17,19 +17,6 @@
   --destructive-foreground: #ffffff;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground antialiased;
-  }
-
-  html {
-    font-size: var(--font-size);
-  }
-}
 
 @layer utilities {
   .animate-in {
