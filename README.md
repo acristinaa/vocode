@@ -1,14 +1,16 @@
-# Vocode 🎤
+# Vocode 
 
 An AI-powered oral exam trainer that helps you practice for any topic with voice interaction.
 
+> I built it at an [AI Tinkerers](https://aitinkerers.org/) event for learning purposes. This project was created with guidance from Claude AI as a hands-on exercise in building voice-enabled AI applications.
+
 ## Features
 
-- 🎯 **Any Topic** - Practice JavaScript, React, System Design, or create custom topics
-- 🗣️ **Voice Interaction** - Speak your answers naturally and hear AI responses
-- 🤖 **AI Examiner** - Powered by Claude AI for intelligent, adaptive questioning
-- 📊 **Session History** - Track your practice sessions and progress
-- ⚙️ **Customizable** - Choose difficulty level and session duration
+- **Any Topic** - Practice JavaScript, React, System Design, or create custom topics
+- **Voice Interaction** - Speak your answers naturally and hear AI responses
+- **AI Examiner** - Powered by Claude AI for intelligent, adaptive questioning
+- **Session History** - Track your practice sessions and progress
+- **Customizable** - Choose difficulty level and session duration
 
 ## Tech Stack
 
